@@ -1,0 +1,5 @@
+<%= link_to 'New bookmark', new_bookmark_path %>
+<%= @bookmarks.each do |bookmark| %>
+<p><%= bookmark.url %></p>
+<img src="<%= bookmark.screenshot_url%>" alt="screen">
+<% end %>
