@@ -1,0 +1,18 @@
+development:
+  cloud_name: bidofan
+  api_key: '984316983616516'
+  api_secret: 'fYH7qqUxxzsDo5aEivou9y9ff1c'
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: bidofan
+  api_key: '984316983616516'
+  api_secret: 'fYH7qqUxxzsDo5aEivou9y9ff1c'
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: bidofan
+  api_key: '984316983616516'
+  api_secret: 'fYH7qqUxxzsDo5aEivou9y9ff1c'
+  enhance_image_tag: true
+  static_image_support: false

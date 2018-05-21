@@ -2,4 +2,5 @@
 <%= @bookmarks.each do |bookmark| %>
 <p><%= bookmark.url %></p>
 <img src="<%= bookmark.screenshot_url%>" alt="screen">
+<%= link_to 'Destroy', bookmark_path(bookmark), method: :delete %>
 <% end %>

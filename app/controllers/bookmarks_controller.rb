@@ -7,9 +7,15 @@ class BookmarksController < ApplicationController
   end
   def create
     @bookmark = current_user.bookmarks.create(bookmark_params)
+    if @bookmark.save
+      redirect_to bookmarks_path
+    end
   end
   def destroy
+    @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
+
+    redirect_to bookmarks_path
   end
 
   private
