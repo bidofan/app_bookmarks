@@ -42,6 +42,7 @@ gem 'jquery-rails'
 gem 'webshot'
 gem 'phantomjs', :require => 'phantomjs/poltergeist'
 gem 'cloudinary'
+gem 'bootstrap'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
