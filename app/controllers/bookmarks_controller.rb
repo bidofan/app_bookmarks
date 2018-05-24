@@ -2,7 +2,11 @@ class BookmarksController < ApplicationController
   before_action :set_bookmark, only: [:update, :edit, :destroy]
   def index
     @bookmark = Bookmark.new
-    @bookmarks = Bookmark.all.paginate(page: params[:page], per_page: 4)
+    if params[:search]
+      @bookmarks = Bookmark.search(params[:search]).order("created_at DESC").paginate(page: params[:page], per_page: 4)
+    else
+      @bookmarks = Bookmark.all.paginate(page: params[:page], per_page: 4)
+    end
   end
   def new
     #@bookmark = Bookmark.new
@@ -12,7 +16,18 @@ class BookmarksController < ApplicationController
     redirect_to bookmarks_path
   end
   def update
+    respond_to do |format|
+      if @bookmark.update(bookmark_params)
+        format.html { redirect_to bookmarks_path, notice: 'Bookmark was successfully updated.' }
+        format.json { render :index, status: :ok, location: bookmarks_path}
+      else
+        format.html { render :edit }
+        format.json { render json: @bookmark.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
+  def edit
   end
   def destroy
     @bookmark.destroy

@@ -1,4 +1,8 @@
-
+<p id="notice"><%= notice %></p>
+<%= form_tag(bookmarks_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Write url to find bookmarks", :class => "form-control" %>
+  <%= submit_tag "Search", :class => "btn btn-success" %>
+<% end %>
 <h1>Your bookmarks</h1>
 
 <button class="btn btn-primary" id="add_bookmark" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
@@ -10,7 +14,7 @@
     <%= render 'form' %>
   </div>
 </div>
-<center><%= will_paginate @bookmarks,  renderer: BootstrapPagination::Rails %></center>
+<section id="paginate"><%= will_paginate @bookmarks,  renderer: BootstrapPagination::Rails %></center>
 <div id="bookmark_holder" class="row">
   <% @bookmarks.each do |bookmark| %>
       <%= render 'row', bookmark: bookmark %>

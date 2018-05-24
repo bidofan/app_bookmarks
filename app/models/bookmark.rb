@@ -6,7 +6,9 @@ class Bookmark < ApplicationRecord
     belongs_to :user
 
     private
-
+    def self.search(search)
+        where('url LIKE ?', "%#{search}%")
+    end
     def url_title
         URI.parse(url).host.sub(/\Awww\./, '')
     end

@@ -10,11 +10,11 @@
   </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
+  <div class="form-group">
+    <%= f.label :url, :for => 'url' %><br />
+    <%= f.text_field :url , :class => 'form-control', :id => 'url' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Create bookmark', :class => 'btn' %>
   </div>
 <% end %>
