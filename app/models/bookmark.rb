@@ -1,6 +1,7 @@
 require 'uri'
 class Bookmark < ApplicationRecord
     after_create :screenshot
+    after_update :clear_screen, :screenshot
     validates :url, :format => URI::regexp(%w(http https)), presence: true
 
     belongs_to :user
@@ -11,6 +12,9 @@ class Bookmark < ApplicationRecord
     end
     def url_title
         URI.parse(url).host.sub(/\Awww\./, '')
+    end
+    def clear_screen
+        screenshot_url = nil
     end
 
     def screenshot

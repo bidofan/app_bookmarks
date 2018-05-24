@@ -1,22 +1,32 @@
-<p id="notice"><%= notice %></p>
-<%= form_tag(bookmarks_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Write url to find bookmarks", :class => "form-control" %>
+<% if notice %>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <%= notice %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+<div class="container">
+<%= form_tag(bookmarks_path, :method => "get", id: "search-form", class: "form-inline search") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Write url to find bookmarks", :class => "form-control col-lg-9 col-md-10 col-sm-12" %>
   <%= submit_tag "Search", :class => "btn btn-success" %>
 <% end %>
+</div>
+
 <h1>Your bookmarks</h1>
 
 <button class="btn btn-primary" id="add_bookmark" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
   Create bookmark
-</button>
-<br />
+</button><br/>
 <div class="collapse" id="collapseExample">
   <div class="well">
     <%= render 'form' %>
   </div>
 </div>
-<section id="paginate"><%= will_paginate @bookmarks,  renderer: BootstrapPagination::Rails %></center>
+<br/>
 <div id="bookmark_holder" class="row">
   <% @bookmarks.each do |bookmark| %>
       <%= render 'row', bookmark: bookmark %>
   <% end %>
+  <center><%= will_paginate(@bookmarks,  :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %></center>
 </div>

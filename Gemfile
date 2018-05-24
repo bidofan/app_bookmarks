@@ -43,7 +43,7 @@ gem 'webshot'
 gem 'phantomjs', :require => 'phantomjs/poltergeist'
 gem 'cloudinary'
 gem 'bootstrap'
-gem 'will_paginate-bootstrap'
+gem 'bootstrap-will_paginate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
