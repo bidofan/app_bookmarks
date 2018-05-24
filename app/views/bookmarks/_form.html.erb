@@ -1,0 +1,20 @@
+<%= form_for @bookmark, remote: true do |f| %>
+  <% if @bookmark.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@bookmark.errors.count, "error") %></h2>
+    <ul>
+    <% @bookmark.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

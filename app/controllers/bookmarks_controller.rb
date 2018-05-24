@@ -1,15 +1,15 @@
 class BookmarksController < ApplicationController
   before_action :set_bookmark, only: [:update, :edit, :destroy]
   def index
-    @bookmarks = Bookmark.all
+    @bookmark = Bookmark.new
+    @bookmarks = Bookmark.all.paginate(page: params[:page], per_page: 4)
   end
   def new
-    @bookmark = Bookmark.new
+    #@bookmark = Bookmark.new
   end
   def create
     @bookmark = current_user.bookmarks.create(bookmark_params)
     redirect_to bookmarks_path
-    end
   end
   def update
 
@@ -19,7 +19,6 @@ class BookmarksController < ApplicationController
 
     redirect_to bookmarks_path
   end
-
   private
   def set_bookmark
     @bookmark = Bookmark.find(params[:id])

@@ -2132,3 +2132,1943 @@ Processing by BookmarksController#index as HTML
 Completed 200 OK in 708ms (Views: 657.4ms | ActiveRecord: 22.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:18:54 +0300
+  [1m[35m (22.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 18181ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_signed_in?' for #<#<Class:0x0000562551101360>:0x00005625510b2760>):
+    47:                 </div>
+    48:                 <div class="collapse navbar-collapse">
+    49:                     <ul class="nav navbar-nav">
+    50:                         <% if user_signed_in? %>
+    51:                         <li>
+    52:                             <%= link_to "Bookmarks", bookmarks_path, :class => 'navbar-link'  %>
+    53:                         </li>
+  
+app/views/layouts/application.html.erb:50:in `_app_views_layouts_application_html_erb__3800261759174872048_47359136376580'
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:20:54 +0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (45.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 500 Internal Server Error in 876ms (ActiveRecord: 145.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<User:0x00007fb3aa959da8>):
+    56:                     <p class="navbar-text pull-right">
+    57:                     <% if current_user %>
+    58:                         Logged in as
+    59:                         <strong><%= current_user.email %></strong>.
+    60:                         <%= link_to "Logout", signout_path, :class => 'navbar-link'  %>
+    61:                     <% else %>
+    62:                         <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", :class => 'navbar-link' %>
+  
+app/views/layouts/application.html.erb:59:in `_app_views_layouts_application_html_erb__3374455335480192944_70204801233500'
+Started GET "/" for 127.0.0.1 at 2018-05-23 15:21:56 +0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 685ms (Views: 652.6ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 15:22:25 +0300
+  
+SyntaxError (/home/bidofan/Documents/app_bookmarks/app/controllers/bookmarks_controller.rb:30: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/bookmarks_controller.rb:30: syntax error, unexpected keyword_end, expecting end-of-input
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 15:23:54 +0300
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (30.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:2
+  Rendered bookmarks/index.html.erb within layouts/application (68.8ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 814ms (Views: 609.6ms | ActiveRecord: 53.7ms)
+
+
+Started DELETE "/bookmarks/6" for 127.0.0.1 at 2018-05-23 15:24:56 +0300
+Processing by BookmarksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Nka+c4yoS4jTq5G8QQlZedlBGrxIztSbPPxaSlXsANr61lROs1o9PlVFPsifdGCFtBaS3knwsBgM10jjjhdYCA==", "id"=>"6"}
+  [1m[36mBookmark Load (1.5ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:17
+  [1m[36mBookmark Destroy (0.9ms)[0m  [1m[31mDELETE FROM "bookmarks" WHERE "bookmarks"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/bookmarks_controller.rb:17
+  [1m[35m (19.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:17
+Redirected to http://localhost:3000/bookmarks
+Completed 302 Found in 35ms (ActiveRecord: 22.8ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 15:24:56 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (3.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:2
+  Rendered bookmarks/index.html.erb within layouts/application (7.5ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 198ms (Views: 191.1ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/bookmarks/new" for 127.0.0.1 at 2018-05-23 15:25:02 +0300
+Processing by BookmarksController#new as HTML
+  Rendering bookmarks/new.html.erb within layouts/application
+  Rendered bookmarks/new.html.erb within layouts/application (152.4ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 300ms (Views: 287.1ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/bookmarks" for 127.0.0.1 at 2018-05-23 15:25:36 +0300
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "bookmark"=>{"url"=>"http://facebook.com"}, "commit"=>"Create Bookmark"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:10
+  [1m[36mBookmark Create (187.1ms)[0m  [1m[32mINSERT INTO "bookmarks" ("url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://facebook.com"], ["user_id", 1], ["created_at", "2018-05-23 12:25:36.314138"], ["updated_at", "2018-05-23 12:25:36.314138"]]
+  ↳ app/controllers/bookmarks_controller.rb:10
+  [1m[36mBookmark Update (2.8ms)[0m  [1m[33mUPDATE "bookmarks" SET "screenshot_url" = $1, "updated_at" = $2 WHERE "bookmarks"."id" = $3[0m  [["screenshot_url", "http://res.cloudinary.com/bidofan/image/upload/v1527078348/nd1r2hkii9z95cljxioh.png"], ["updated_at", "2018-05-23 12:25:48.364298"], ["id", 8]]
+  ↳ app/models/bookmark.rb:18
+  [1m[35m (14.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:10
+Redirected to http://localhost:3000/bookmarks
+Completed 200 OK in 12378ms (ActiveRecord: 206.1ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 15:25:48 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:2
+  Rendered bookmarks/index.html.erb within layouts/application (10.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 129ms (Views: 124.6ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/bookmarks/7" for 127.0.0.1 at 2018-05-23 15:25:58 +0300
+Processing by BookmarksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JR0mYN5DeQdE7RlQyTCbPl00WAvX6k42ZFAbeznQ2bXpjcxd4bEPscIDtiQXTaLCMGPQadbUKrVUewnS4iuBZw==", "id"=>"7"}
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:23
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:17
+  [1m[36mBookmark Destroy (0.9ms)[0m  [1m[31mDELETE FROM "bookmarks" WHERE "bookmarks"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/bookmarks_controller.rb:17
+  [1m[35m (80.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:17
+Redirected to http://localhost:3000/bookmarks
+Completed 302 Found in 92ms (ActiveRecord: 83.0ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 15:25:58 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (1.7ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:2
+  Rendered bookmarks/index.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 99ms (Views: 93.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 16:10:07 +0300
+Started GET "/" for 127.0.0.1 at 2018-05-23 16:10:08 +0300
+  [1m[35m (115.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (114.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (76.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 2839ms (Views: 2527.2ms | ActiveRecord: 227.5ms)
+
+
+  [1m[36mUser Load (143.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 2825ms (Views: 2551.8ms | ActiveRecord: 243.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 16:17:43 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 106ms (Views: 100.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 16:17:44 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 197ms (Views: 193.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:29:37 +0300
+  [1m[35m (104.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5.5ms)
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:29:42 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 1338ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (can't add a new key into hash during iteration):
+     5:     <%= csrf_meta_tags %>
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+  
+app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1533303654463088425_47211047678760'
+  [1m[36mUser Load (99.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 3605ms (Views: 3347.9ms | ActiveRecord: 252.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:29:50 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 144ms (Views: 140.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:30:32 +0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 597ms (Views: 567.4ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:30:34 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 153ms (Views: 148.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:32:12 +0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 601ms (Views: 567.9ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:32:45 +0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 602ms (Views: 565.3ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:34:38 +0300
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 589ms (Views: 559.5ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2018-05-23 21:35:04 +0300
+Processing by SessionController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:35:04 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 129ms (Views: 126.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-05-23 21:35:05 +0300
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-05-23 21:35:06 +0300
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQClbq2-aK9HjhgixQNYAaTiVCkp_-0gOwxL8SsKOoGeWu6V9q7XUKCJgt0Ot5clMYmRnkK4Y4YA8liR9wX04xgxUKLcicBOnf4BhptpfRhdDYe5a2RaNfUSH5Az1t93KVUkedvZlDjkw1as87y1rsV39FEcn63twPkhSlyJ-44kjwQlqtbfDh3fc-PPx07sfOyMDuLC7W3lHQrSkJmQ8w-CvLYpNFcVs9sNH6Y1ieerr40E1RElNLI5dLwmUBJc0x61FO8UORobQFVqB3yDO1hsqameipCqfu1nYSc7vCg4f4GzGnU0nGNmVO9Ca6sDhu2hrZzsOgGTzV1fGH9RH2KQ&state=cb544d7d50fe14082c35b43fb9f854f0558917f7bbd774f8" for 127.0.0.1 at 2018-05-23 21:35:15 +0300
+(facebook) Callback phase initiated.
+Processing by SessionController#create as HTML
+  Parameters: {"code"=>"AQClbq2-aK9HjhgixQNYAaTiVCkp_-0gOwxL8SsKOoGeWu6V9q7XUKCJgt0Ot5clMYmRnkK4Y4YA8liR9wX04xgxUKLcicBOnf4BhptpfRhdDYe5a2RaNfUSH5Az1t93KVUkedvZlDjkw1as87y1rsV39FEcn63twPkhSlyJ-44kjwQlqtbfDh3fc-PPx07sfOyMDuLC7W3lHQrSkJmQ8w-CvLYpNFcVs9sNH6Y1ieerr40E1RElNLI5dLwmUBJc0x61FO8UORobQFVqB3yDO1hsqameipCqfu1nYSc7vCg4f4GzGnU0nGNmVO9Ca6sDhu2hrZzsOgGTzV1fGH9RH2KQ", "state"=>"cb544d7d50fe14082c35b43fb9f854f0558917f7bbd774f8", "provider"=>"facebook"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:4
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:10
+  [1m[36mUser Update (52.2ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = $1, "oauth_expires_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["oauth_token", "EAAZAQuP6U6B0BAF3EBZBFMMI8emmiJIPDAOkDhsoZCKH9ZCkJEWqXNUbMiYrLMtKiRB3aAWbF7OQA5nGZCUZAKOz9gK6X9gvLZBuZAaD8K47lssnB2yYECt7OUdMQU6gZA4fvcrdZABdAebFJbcd0yjeSbxfMyiFfrNdDDc7fBg8DWFQZDZD"], ["oauth_expires_at", "2018-07-22 18:29:49"], ["updated_at", "2018-05-23 18:35:15.863690"], ["id", 1]]
+  ↳ app/models/user.rb:10
+  [1m[35m (87.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 156ms (ActiveRecord: 142.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:35:16 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 105ms (Views: 101.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:36:46 +0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 601ms (Views: 567.5ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:38:40 +0300
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 582ms (Views: 550.7ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:40:05 +0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 706ms (Views: 674.7ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:40:12 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 105ms (Views: 100.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:42:02 +0300
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 14056ms (Views: 14025.3ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:42:59 +0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:43:01 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 19976ms (Views: 19958.8ms | ActiveRecord: 13.1ms)
+
+
+  [1m[36mUser Load (22.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 21462ms (Views: 21402.6ms | ActiveRecord: 38.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:44:28 +0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 16748ms (Views: 16723.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2018-05-23 21:44:54 +0300
+(facebook) Callback phase initiated.
+Processing by SessionController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:4
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:10
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = $1, "oauth_expires_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["oauth_token", "EAAZAQuP6U6B0BANCrrg6gk6QTjVGTNuXHGTF8cxaqByjKf6w2FiUD0HwrYHUI1S3JuZAJ7EUfGLh6V3rAhpK2ZACxp6qv15g28AqIBvGM905dcHwlpe1EwT5CVR1Bi98UpW44mBxq0piDtflQc3DkgqjMpONZBuBj9FcO6k2srRs1aSueO41A8iV654fkWUZD"], ["oauth_expires_at", "2018-05-23 20:00:00"], ["updated_at", "2018-05-23 18:44:55.028694"], ["id", 1]]
+  ↳ app/models/user.rb:10
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 123ms (ActiveRecord: 35.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:44:55 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 110ms (Views: 106.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 21:45:28 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (78.8ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:2
+  Rendered bookmarks/index.html.erb within layouts/application (116.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 7690ms (Views: 7383.0ms | ActiveRecord: 92.5ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 21:45:36 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:2
+  Rendered bookmarks/index.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 184ms (Views: 179.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/bookmarks/new" for 127.0.0.1 at 2018-05-23 21:45:40 +0300
+Processing by BookmarksController#new as HTML
+  Rendering bookmarks/new.html.erb within layouts/application
+  Rendered bookmarks/new.html.erb within layouts/application (472.9ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 587ms (Views: 563.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/bookmarks" for 127.0.0.1 at 2018-05-23 21:46:34 +0300
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "bookmark"=>{"url"=>"http://tproger.ru"}, "commit"=>"Create Bookmark"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:10
+  [1m[36mBookmark Create (63.2ms)[0m  [1m[32mINSERT INTO "bookmarks" ("url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://tproger.ru"], ["user_id", 1], ["created_at", "2018-05-23 18:46:34.706675"], ["updated_at", "2018-05-23 18:46:34.706675"]]
+  ↳ app/controllers/bookmarks_controller.rb:10
+  [1m[36mBookmark Update (1.6ms)[0m  [1m[33mUPDATE "bookmarks" SET "screenshot_url" = $1, "updated_at" = $2 WHERE "bookmarks"."id" = $3[0m  [["screenshot_url", "http://res.cloudinary.com/bidofan/image/upload/v1527101221/veu7l1a8hcp5pq061mwo.png"], ["updated_at", "2018-05-23 18:47:02.255745"], ["id", 9]]
+  ↳ app/models/bookmark.rb:18
+  [1m[35m (17.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:10
+Redirected to http://localhost:3000/bookmarks
+Completed 200 OK in 27776ms (ActiveRecord: 83.4ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 21:47:02 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (3.8ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:2
+  Rendered bookmarks/index.html.erb within layouts/application (11.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 116ms (Views: 108.9ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/bookmarks/new" for 127.0.0.1 at 2018-05-23 21:47:17 +0300
+Processing by BookmarksController#new as HTML
+  Rendering bookmarks/new.html.erb within layouts/application
+  Rendered bookmarks/new.html.erb within layouts/application (4.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 108ms (Views: 103.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/bookmarks" for 127.0.0.1 at 2018-05-23 21:47:49 +0300
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "bookmark"=>{"url"=>"http://rp5.ua"}, "commit"=>"Create Bookmark"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (5.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:10
+  [1m[36mBookmark Create (1.2ms)[0m  [1m[32mINSERT INTO "bookmarks" ("url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://rp5.ua"], ["user_id", 1], ["created_at", "2018-05-23 18:47:49.945759"], ["updated_at", "2018-05-23 18:47:49.945759"]]
+  ↳ app/controllers/bookmarks_controller.rb:10
+  [1m[36mBookmark Update (2.5ms)[0m  [1m[33mUPDATE "bookmarks" SET "screenshot_url" = $1, "updated_at" = $2 WHERE "bookmarks"."id" = $3[0m  [["screenshot_url", "http://res.cloudinary.com/bidofan/image/upload/v1527101273/zlebusqykcmve56izwem.png"], ["updated_at", "2018-05-23 18:47:53.596657"], ["id", 10]]
+  ↳ app/models/bookmark.rb:18
+  [1m[35m (13.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:10
+Redirected to http://localhost:3000/bookmarks
+Completed 200 OK in 3688ms (ActiveRecord: 24.0ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 21:47:53 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (1.0ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:2
+  Rendered bookmarks/index.html.erb within layouts/application (6.7ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 99ms (Views: 94.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:50:47 +0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 890ms (Views: 852.0ms | ActiveRecord: 19.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:51:51 +0300
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 641ms (Views: 607.6ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 21:53:08 +0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 597ms (Views: 565.9ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 21:53:44 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (2.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:2
+  Rendered bookmarks/index.html.erb within layouts/application (51.6ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 185ms (Views: 125.8ms | ActiveRecord: 22.0ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:31:56 +0300
+  [1m[35m (18.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (1.7ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:2
+  Rendered bookmarks/_form.html.erb (57.4ms)
+  Rendered bookmarks/index.html.erb within layouts/application (103.1ms)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 17.1ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @bookmark, remote: true do |f| %>
+    2:   <% if @bookmark.errors.any? %>
+    3:   <div id="errorExplanation">
+    4:     <h2><%= pluralize(@bookmark.errors.count, "error") %></h2>
+  
+app/views/bookmarks/_form.html.erb:1:in `_app_views_bookmarks__form_html_erb__1895511874639400883_47325345485440'
+app/views/bookmarks/index.html.erb:14:in `_app_views_bookmarks_index_html_erb___2495447015235731780_47325345813180'
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:34:44 +0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  [1m[36mBookmark Load (1.8ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:2
+  Rendered bookmarks/_form.html.erb (4.2ms)
+  Rendered bookmarks/index.html.erb within layouts/application (45.0ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 15.1ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @bookmark, remote: true do |f| %>
+    2:   <% if @bookmark.errors.any? %>
+    3:   <div id="errorExplanation">
+    4:     <h2><%= pluralize(@bookmark.errors.count, "error") %></h2>
+  
+app/views/bookmarks/_form.html.erb:1:in `_app_views_bookmarks__form_html_erb___110070531125538021_47359569193960'
+app/views/bookmarks/index.html.erb:14:in `_app_views_bookmarks_index_html_erb___4244128002116015894_69878048220000'
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:37:16 +0300
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.4ms)
+  Rendered bookmarks/index.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @bookmark, remote: true do |f| %>
+    2:   <% if @bookmark.errors.any? %>
+    3:   <div id="errorExplanation">
+    4:     <h2><%= pluralize(@bookmark.errors.count, "error") %></h2>
+  
+app/views/bookmarks/_form.html.erb:1:in `_app_views_bookmarks__form_html_erb___176505536381803465_70332106865240'
+app/views/bookmarks/index.html.erb:10:in `_app_views_bookmarks_index_html_erb__945277002873275004_70332106791080'
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:37:45 +0300
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.3ms)
+  Rendered bookmarks/index.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @bookmark, remote: true do |f| %>
+    2:   <% if @bookmark.errors.any? %>
+    3:   <div id="errorExplanation">
+    4:     <h2><%= pluralize(@bookmark.errors.count, "error") %></h2>
+  
+app/views/bookmarks/_form.html.erb:1:in `_app_views_bookmarks__form_html_erb__1141451016070510689_70058537576380'
+app/views/bookmarks/index.html.erb:10:in `_app_views_bookmarks_index_html_erb___2476343650673231583_70058537492660'
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:38:42 +0300
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (105.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (124.0ms)
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 11.6ms)
+
+
+  
+ActionView::Template::Error (uninitialized class variable @@bookmarks in ActionView::CompiledTemplates):
+    10:     <%= render 'form', bookmark: @bookmark %>
+    11:   </div>
+    12: </div>
+    13: <center><%= paginate @@bookmarks, theme: 'twitter-bootstrap-4',  pagination_class: "pagination-sm" %></center>
+    14: <div id="bookmark_holder">
+    15:   <% @bookmarks.each do |bookmark| %>
+    16:       <%= render 'row', bookmark: bookmark %>
+  
+app/views/bookmarks/index.html.erb:13:in `_app_views_bookmarks_index_html_erb__2339813703000115833_47036860063300'
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:39:16 +0300
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (13.1ms)
+  [1m[36mBookmark Load (1.2ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered bookmarks/index.html.erb within layouts/application (479.9ms)
+Completed 500 Internal Server Error in 543ms (ActiveRecord: 18.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `paginate' for #<#<Class:0x00007f1270822628>:0x000055b9d479b0d8>):
+    10:     <%= render 'form', bookmark: @bookmark %>
+    11:   </div>
+    12: </div>
+    13: <center><%= paginate @bookmarks, theme: 'twitter-bootstrap-4',  pagination_class: "pagination-sm" %></center>
+    14: <div id="bookmark_holder">
+    15:   <% @bookmarks.each do |bookmark| %>
+    16:       <%= render 'row', bookmark: bookmark %>
+  
+app/views/bookmarks/index.html.erb:13:in `_app_views_bookmarks_index_html_erb___1978893213203601831_69858586859960'
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:42:19 +0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (60.8ms)
+  [1m[36mBookmark Load (1.1ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered bookmarks/index.html.erb within layouts/application (91.3ms)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 16.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Bookmark::ActiveRecord_Relation:0x00007f9fd082db20>):
+    10:     <%= render 'form', bookmark: @bookmark %>
+    11:   </div>
+    12: </div>
+    13: <center><%= will_paginate @bookmarks, theme: 'twitter-bootstrap-4',  pagination_class: "pagination-sm" %></center>
+    14: <div id="bookmark_holder">
+    15:   <% @bookmarks.each do |bookmark| %>
+    16:       <%= render 'row', bookmark: bookmark %>
+  
+app/views/bookmarks/index.html.erb:13:in `_app_views_bookmarks_index_html_erb___1055245397589860855_70162187379180'
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:43:12 +0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (12.9ms)
+  [1m[36mBookmark Load (1.2ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered bookmarks/index.html.erb within layouts/application (39.5ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 13.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Bookmark::ActiveRecord_Relation:0x00005587f1229740>):
+    10:     <%= render 'form', bookmark: @bookmark %>
+    11:   </div>
+    12: </div>
+    13: <center><%= will_paginate @bookmarks,  renderer: BootstrapPagination::Rails, theme: 'twitter-bootstrap-4',  pagination_class: "pagination-sm" %></center>
+    14: <div id="bookmark_holder">
+    15:   <% @bookmarks.each do |bookmark| %>
+    16:       <%= render 'row', bookmark: bookmark %>
+  
+app/views/bookmarks/index.html.erb:13:in `_app_views_bookmarks_index_html_erb___3545868640911665127_70180004788760'
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:45:16 +0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (17.0ms)
+  [1m[36mBookmark Load (1.5ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered bookmarks/index.html.erb within layouts/application (45.1ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 13.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Bookmark::ActiveRecord_Relation:0x000055d99ed56bc8>):
+    10:     <%= render 'form', bookmark: @bookmark %>
+    11:   </div>
+    12: </div>
+    13: <center><%= will_paginate @bookmarks,  renderer: BootstrapPagination::Rails, pagination_class: "pagination-sm" %></center>
+    14: <div id="bookmark_holder">
+    15:   <% @bookmarks.each do |bookmark| %>
+    16:       <%= render 'row', bookmark: bookmark %>
+  
+app/views/bookmarks/index.html.erb:13:in `_app_views_bookmarks_index_html_erb__2436221062824851804_47196580466620'
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:45:44 +0300
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (13.6ms)
+  [1m[36mBookmark Load (2.1ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/lib/ruby/vendor_ruby/did_you_mean/core_ext/name_error.rb:8
+  Rendered bookmarks/index.html.erb within layouts/application (39.5ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 17.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for #<Bookmark::ActiveRecord_Relation:0x0000564ba12b2918>):
+    10:     <%= render 'form', bookmark: @bookmark %>
+    11:   </div>
+    12: </div>
+    13: <center><%= will_paginate @bookmarks,  renderer: BootstrapPagination::Rails, pagination_class: "pagination-sm" %></center>
+    14: <div id="bookmark_holder">
+    15:   <% @bookmarks.each do |bookmark| %>
+    16:       <%= render 'row', bookmark: bookmark %>
+  
+app/views/bookmarks/index.html.erb:13:in `_app_views_bookmarks_index_html_erb___2082076231472604575_70070751607740'
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:50:09 +0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (13.9ms)
+  [1m[35m (112.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (161.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (3.6ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (6.1ms)
+  Rendered bookmarks/index.html.erb within layouts/application (378.9ms)
+Completed 200 OK in 1818ms (Views: 1622.1ms | ActiveRecord: 143.4ms)
+
+
+Started POST "/bookmarks" for 127.0.0.1 at 2018-05-23 22:51:01 +0300
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "bookmark"=>{"url"=>"http://football.ua"}, "commit"=>"Create Bookmark"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:11
+  [1m[36mBookmark Create (49.5ms)[0m  [1m[32mINSERT INTO "bookmarks" ("url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://football.ua"], ["user_id", 1], ["created_at", "2018-05-23 19:51:01.695776"], ["updated_at", "2018-05-23 19:51:01.695776"]]
+  ↳ app/controllers/bookmarks_controller.rb:11
+  [1m[36mBookmark Update (5.0ms)[0m  [1m[33mUPDATE "bookmarks" SET "screenshot_url" = $1, "updated_at" = $2 WHERE "bookmarks"."id" = $3[0m  [["screenshot_url", "http://res.cloudinary.com/bidofan/image/upload/v1527105082/wj6ijs0qpttzn0nolowl.png"], ["updated_at", "2018-05-23 19:51:22.832334"], ["id", 11]]
+  ↳ app/models/bookmark.rb:18
+  [1m[35m (38.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:11
+Redirected to http://localhost:3000/bookmarks
+Completed 200 OK in 21278ms (ActiveRecord: 95.9ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:51:22 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.1ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (8.8ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (3.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (3.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (3.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (96.5ms)
+Completed 200 OK in 245ms (Views: 234.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 22:55:22 +0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 633ms (Views: 571.6ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:55:25 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (99.4ms)
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.1ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (30.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (4.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (2.4ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (2.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (158.2ms)
+Completed 200 OK in 355ms (Views: 285.7ms | ActiveRecord: 12.8ms)
+
+
+Started POST "/bookmarks" for 127.0.0.1 at 2018-05-23 22:55:47 +0300
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "bookmark"=>{"url"=>"http://ain.ua"}, "commit"=>"Create Bookmark"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:11
+  [1m[36mBookmark Create (1.8ms)[0m  [1m[32mINSERT INTO "bookmarks" ("url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://ain.ua"], ["user_id", 1], ["created_at", "2018-05-23 19:55:47.391092"], ["updated_at", "2018-05-23 19:55:47.391092"]]
+  ↳ app/controllers/bookmarks_controller.rb:11
+  [1m[36mBookmark Update (1.5ms)[0m  [1m[33mUPDATE "bookmarks" SET "screenshot_url" = $1, "updated_at" = $2 WHERE "bookmarks"."id" = $3[0m  [["screenshot_url", "http://res.cloudinary.com/bidofan/image/upload/v1527105360/hxzadyun8haxbx0hpkdo.png"], ["updated_at", "2018-05-23 19:56:00.459319"], ["id", 12]]
+  ↳ app/models/bookmark.rb:18
+  [1m[35m (21.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:11
+Redirected to http://localhost:3000/bookmarks
+Completed 200 OK in 13115ms (ActiveRecord: 26.8ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 22:56:00 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (9.8ms)
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (9.9ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (6.1ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (8.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (3.2ms)
+  Rendered bookmarks/index.html.erb within layouts/application (70.4ms)
+Completed 200 OK in 171ms (Views: 162.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 22:56:29 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.8ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.1ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (8.1ms)
+  Rendered bookmarks/index.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 118ms (Views: 111.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 22:56:34 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.6ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (2.4ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (17.6ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (3.2ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (3.3ms)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  Rendered bookmarks/_row.html.erb (2.4ms)
+  Rendered bookmarks/index.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 143ms (Views: 135.8ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 22:56:38 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (5.3ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (2.1ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/bookmarks/_row.html.erb:3
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (12.9ms)
+  Rendered bookmarks/index.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 168ms (Views: 157.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:04:55 +0300
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:04:55 +0300
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  [1m[35m (23.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  Parameters: {"page"=>"2"}
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (28.4ms)
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.4ms)
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[35m (25.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (15.8ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (99.8ms)
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:04:56 +0300
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered bookmarks/index.html.erb within layouts/application (166.7ms)
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (95.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (158.8ms)
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.3ms)
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (5.3ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (9.3ms)
+  Rendered bookmarks/index.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 1722ms (Views: 1611.1ms | ActiveRecord: 34.5ms)
+
+
+Completed 200 OK in 1709ms (Views: 1603.8ms | ActiveRecord: 49.2ms)
+
+
+Completed 200 OK in 595ms (Views: 581.2ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:05:07 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.2ms)
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (4.1ms)
+  Rendered bookmarks/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 162ms (Views: 156.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 23:05:11 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (5.4ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.3ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (8.1ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 141ms (Views: 135.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:05:12 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (5.6ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (13.3ms)
+  Rendered bookmarks/index.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 190ms (Views: 176.2ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 23:05:15 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.3ms)
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.6ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (5.2ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (1.2ms)
+  Rendered bookmarks/index.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 125ms (Views: 113.4ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 23:05:17 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 94ms (Views: 90.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2018-05-23 23:05:18 +0300
+Processing by SessionController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 23:05:19 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 83ms (Views: 80.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-05-23 23:05:20 +0300
+(facebook) Request phase initiated.
+Started GET "/auth/facebook" for 127.0.0.1 at 2018-05-23 23:05:20 +0300
+(facebook) Request phase initiated.
+Started GET "/auth/facebook/callback?code=AQCX-xRfeYabYizrE3G6H2tJTl_RMO0q-omeHpdakNK5Iiy8IXdGbe1YK9CWHvfHe0DFrR-Q9oaSMoEKp23v2Uc3VgTUNI8uMaVURPfHOyfN8zn3kq-SN3xc79ANEKLCrgZcqQapwETYoyLEor4sBNFTL2ooPUAmctOEoXhlSsdGfF2-w7Gxrfyes99Kc0awrErrlt2xz6S3t886hLIF3_uZAHGhGGsYTYkeTehl5hL8_ea4VvNu0ZksSulKXNl2vuHaxdAD6R9f4wuCpkdwbeLXSPamhhKbjyy8IXpGh3Qg0Rs9rsEmJZUZKo8Kw02ASKBT-mMTq07FfKs-XkPwvN0M&state=dc9265e690962ad89bdc6bcc3e63402a1edcb1a3e2224e19" for 127.0.0.1 at 2018-05-23 23:05:33 +0300
+(facebook) Callback phase initiated.
+Processing by SessionController#create as HTML
+  Parameters: {"code"=>"AQCX-xRfeYabYizrE3G6H2tJTl_RMO0q-omeHpdakNK5Iiy8IXdGbe1YK9CWHvfHe0DFrR-Q9oaSMoEKp23v2Uc3VgTUNI8uMaVURPfHOyfN8zn3kq-SN3xc79ANEKLCrgZcqQapwETYoyLEor4sBNFTL2ooPUAmctOEoXhlSsdGfF2-w7Gxrfyes99Kc0awrErrlt2xz6S3t886hLIF3_uZAHGhGGsYTYkeTehl5hL8_ea4VvNu0ZksSulKXNl2vuHaxdAD6R9f4wuCpkdwbeLXSPamhhKbjyy8IXpGh3Qg0Rs9rsEmJZUZKo8Kw02ASKBT-mMTq07FfKs-XkPwvN0M", "state"=>"dc9265e690962ad89bdc6bcc3e63402a1edcb1a3e2224e19", "provider"=>"facebook"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:4
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:10
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "oauth_token" = $1, "oauth_expires_at" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["oauth_token", "EAAZAQuP6U6B0BAGmH5sf9miM8fAsQQivleShHyfl8alUm8PuA0ypnn6xI3zIqD4DZAgRIhzG5J1cD9OPn8lvi6JkiO0OQiagn2Xn9rtZAZB2czCFRDplnHa6xojLq2d3ZBfv3oWFzVnTFS92RBasDJnHVihNhL0WsU6jK1N78iAZDZD"], ["oauth_expires_at", "2018-07-22 18:29:49"], ["updated_at", "2018-05-23 20:05:33.726751"], ["id", 1]]
+  ↳ app/models/user.rb:10
+  [1m[35m (27.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:10
+Redirected to http://localhost:3000/
+Completed 302 Found in 45ms (ActiveRecord: 31.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 23:05:33 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 94ms (Views: 90.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 23:05:52 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (5.3ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.6ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (6.5ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.8ms)
+  Rendered bookmarks/index.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 127ms (Views: 121.0ms | ActiveRecord: 3.2ms)
+
+
+Started DELETE "/bookmarks/11" for 127.0.0.1 at 2018-05-23 23:06:12 +0300
+Processing by BookmarksController#destroy as JS
+  Parameters: {"id"=>"11"}
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:24
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:18
+  [1m[36mBookmark Destroy (1.0ms)[0m  [1m[31mDELETE FROM "bookmarks" WHERE "bookmarks"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/bookmarks_controller.rb:18
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:18
+Redirected to http://localhost:3000/bookmarks
+Completed 200 OK in 26ms (ActiveRecord: 17.8ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 23:06:12 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.7ms)
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (2.3ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (4.5ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 115ms (Views: 106.7ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/bookmarks" for 127.0.0.1 at 2018-05-23 23:07:05 +0300
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "bookmark"=>{"url"=>"http://google.com"}, "commit"=>"Create Bookmark"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:11
+  [1m[36mBookmark Create (1.6ms)[0m  [1m[32mINSERT INTO "bookmarks" ("url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://google.com"], ["user_id", 1], ["created_at", "2018-05-23 20:07:05.273754"], ["updated_at", "2018-05-23 20:07:05.273754"]]
+  ↳ app/controllers/bookmarks_controller.rb:11
+  [1m[36mBookmark Update (1.8ms)[0m  [1m[33mUPDATE "bookmarks" SET "screenshot_url" = $1, "updated_at" = $2 WHERE "bookmarks"."id" = $3[0m  [["screenshot_url", "http://res.cloudinary.com/bidofan/image/upload/v1527106030/lwlkrgwiduvprtprj6ix.png"], ["updated_at", "2018-05-23 20:07:11.015514"], ["id", 13]]
+  ↳ app/models/bookmark.rb:18
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:11
+Redirected to http://localhost:3000/bookmarks
+Completed 200 OK in 5780ms (ActiveRecord: 16.9ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 23:07:11 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.1ms)
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (4.9ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 117ms (Views: 110.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:07:15 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.7ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (4.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 106ms (Views: 99.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:08:19 +0300
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (16.7ms)
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (50.2ms)
+  Rendered bookmarks/index.html.erb within layouts/application (83.0ms)
+Completed 200 OK in 727ms (Views: 655.6ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 23:08:23 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.9ms)
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.7ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (7.6ms)
+  Rendered bookmarks/_row.html.erb (1.1ms)
+  Rendered bookmarks/_row.html.erb (0.9ms)
+  Rendered bookmarks/_row.html.erb (1.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 171ms (Views: 156.2ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/bookmarks" for 127.0.0.1 at 2018-05-23 23:08:51 +0300
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "bookmark"=>{"url"=>"http://2ip.ua"}, "commit"=>"Create Bookmark"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:11
+  [1m[36mBookmark Create (2.3ms)[0m  [1m[32mINSERT INTO "bookmarks" ("url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://2ip.ua"], ["user_id", 1], ["created_at", "2018-05-23 20:08:51.536260"], ["updated_at", "2018-05-23 20:08:51.536260"]]
+  ↳ app/controllers/bookmarks_controller.rb:11
+  [1m[36mBookmark Update (2.3ms)[0m  [1m[33mUPDATE "bookmarks" SET "screenshot_url" = $1, "updated_at" = $2 WHERE "bookmarks"."id" = $3[0m  [["screenshot_url", "http://res.cloudinary.com/bidofan/image/upload/v1527106138/obulrnp5mb0ohuslhdyg.png"], ["updated_at", "2018-05-23 20:08:58.664254"], ["id", 14]]
+  ↳ app/models/bookmark.rb:18
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:11
+Redirected to http://localhost:3000/bookmarks
+Completed 200 OK in 7172ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 23:08:58 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.4ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (5.5ms)
+  Rendered bookmarks/_row.html.erb (0.8ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (64.2ms)
+Completed 200 OK in 161ms (Views: 151.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:09:02 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (15.1ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (9.9ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 156ms (Views: 149.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:15:56 +0300
+  [1m[35m (16.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (13.3ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.7ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (46.7ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (77.1ms)
+Completed 200 OK in 737ms (Views: 664.5ms | ActiveRecord: 25.8ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 23:16:05 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (11.2ms)
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.5ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (7.7ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (0.8ms)
+  Rendered bookmarks/index.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 130ms (Views: 117.0ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-23 23:17:46 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 120ms (Views: 84.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 23:18:53 +0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (12.6ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (45.8ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (81.2ms)
+Completed 200 OK in 709ms (Views: 638.9ms | ActiveRecord: 25.3ms)
+
+
+Started GET "/bookmarks/8/edit" for 127.0.0.1 at 2018-05-23 23:21:34 +0300
+Processing by BookmarksController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mBookmark Load (2.2ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:24
+  Rendering bookmarks/edit.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (6.2ms)
+  Rendered bookmarks/edit.html.erb within layouts/application (8.6ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 125ms (Views: 113.1ms | ActiveRecord: 4.3ms)
+
+
+Started PATCH "/bookmarks/8" for 127.0.0.1 at 2018-05-23 23:22:06 +0300
+Processing by BookmarksController#update as JS
+  Parameters: {"utf8"=>"✓", "bookmark"=>{"url"=>"http://habrahabr.ru"}, "commit"=>"Update Bookmark", "id"=>"8"}
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:24
+No template found for BookmarksController#update, rendering head :no_content
+Completed 204 No Content in 63ms (ActiveRecord: 0.9ms)
+
+
+Started PATCH "/bookmarks/8" for 127.0.0.1 at 2018-05-23 23:22:14 +0300
+Processing by BookmarksController#update as JS
+  Parameters: {"utf8"=>"✓", "bookmark"=>{"url"=>"http://habrahabr.ru"}, "commit"=>"Update Bookmark", "id"=>"8"}
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:24
+No template found for BookmarksController#update, rendering head :no_content
+Completed 204 No Content in 61ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 23:22:20 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.9ms)
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (5.3ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 118ms (Views: 109.9ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 23:23:32 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.9ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (4.8ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (76.2ms)
+Completed 200 OK in 174ms (Views: 168.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:23:36 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.4ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.0ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (4.3ms)
+  Rendered bookmarks/_row.html.erb (1.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 120ms (Views: 114.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/bookmarks/14/edit" for 127.0.0.1 at 2018-05-23 23:23:50 +0300
+Processing by BookmarksController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mBookmark Load (1.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:24
+  Rendering bookmarks/edit.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (10.4ms)
+  Rendered bookmarks/edit.html.erb within layouts/application (12.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 174ms (Views: 160.9ms | ActiveRecord: 2.8ms)
+
+
+Started PATCH "/bookmarks/14" for 127.0.0.1 at 2018-05-23 23:23:59 +0300
+Processing by BookmarksController#update as JS
+  Parameters: {"utf8"=>"✓", "bookmark"=>{"url"=>"http://google.com"}, "commit"=>"Update Bookmark", "id"=>"14"}
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:24
+No template found for BookmarksController#update, rendering head :no_content
+Completed 204 No Content in 66ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 23:29:57 +0300
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (11.8ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (43.4ms)
+  Rendered bookmarks/_row.html.erb (0.9ms)
+  Rendered bookmarks/_row.html.erb (0.5ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (75.6ms)
+Completed 200 OK in 706ms (Views: 636.7ms | ActiveRecord: 25.5ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:29:59 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (5.3ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.3ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (10.9ms)
+  Rendered bookmarks/_row.html.erb (0.9ms)
+  Rendered bookmarks/index.html.erb within layouts/application (37.4ms)
+Completed 200 OK in 157ms (Views: 142.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 23:35:32 +0300
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (15.9ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (47.4ms)
+  Rendered bookmarks/_row.html.erb (0.5ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (85.5ms)
+Completed 200 OK in 719ms (Views: 646.1ms | ActiveRecord: 25.9ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:35:38 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.0ms)
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (7.6ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 139ms (Views: 129.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 23:35:41 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (11.0ms)
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.1ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (4.8ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (45.5ms)
+Completed 200 OK in 183ms (Views: 169.3ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:35:50 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (17.6ms)
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (6.5ms)
+  Rendered bookmarks/_row.html.erb (0.5ms)
+  Rendered bookmarks/index.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 205ms (Views: 197.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 23:35:51 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (6.0ms)
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (3.6ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (11.4ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.8ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (63.5ms)
+Completed 200 OK in 174ms (Views: 162.4ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:35:53 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (12.2ms)
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (4.1ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (11.4ms)
+  Rendered bookmarks/_row.html.erb (3.8ms)
+  Rendered bookmarks/index.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 194ms (Views: 181.2ms | ActiveRecord: 6.6ms)
+
+
+Started DELETE "/bookmarks/13" for 127.0.0.1 at 2018-05-23 23:35:55 +0300
+Processing by BookmarksController#destroy as JS
+  Parameters: {"id"=>"13"}
+  [1m[36mBookmark Load (1.0ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:24
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:18
+  [1m[36mBookmark Destroy (0.9ms)[0m  [1m[31mDELETE FROM "bookmarks" WHERE "bookmarks"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/bookmarks_controller.rb:18
+  [1m[35m (48.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:18
+Redirected to http://localhost:3000/bookmarks
+Completed 200 OK in 59ms (ActiveRecord: 50.5ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 23:35:55 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (6.2ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (2.0ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (6.1ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (2.2ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 181ms (Views: 170.1ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:35:57 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (5.8ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.1ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (7.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 177ms (Views: 167.0ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/bookmarks/14" for 127.0.0.1 at 2018-05-23 23:35:58 +0300
+Processing by BookmarksController#destroy as JS
+  Parameters: {"id"=>"14"}
+  [1m[36mBookmark Load (0.9ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/bookmarks_controller.rb:24
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:18
+  [1m[36mBookmark Destroy (0.9ms)[0m  [1m[31mDELETE FROM "bookmarks" WHERE "bookmarks"."id" = $1[0m  [["id", 14]]
+  ↳ app/controllers/bookmarks_controller.rb:18
+  [1m[35m (22.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:18
+Redirected to http://localhost:3000/bookmarks
+Completed 200 OK in 39ms (ActiveRecord: 25.1ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 23:35:58 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (8.4ms)
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.1ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (10.4ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.5ms)
+  Rendered bookmarks/_row.html.erb (2.0ms)
+  Rendered bookmarks/index.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 184ms (Views: 173.9ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/bookmarks" for 127.0.0.1 at 2018-05-23 23:36:07 +0300
+Processing by BookmarksController#create as JS
+  Parameters: {"utf8"=>"✓", "bookmark"=>{"url"=>"http://habrahabr.ru"}, "commit"=>"Create Bookmark"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/bookmarks_controller.rb:11
+  [1m[36mBookmark Create (30.5ms)[0m  [1m[32mINSERT INTO "bookmarks" ("url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["url", "http://habrahabr.ru"], ["user_id", 1], ["created_at", "2018-05-23 20:36:07.738397"], ["updated_at", "2018-05-23 20:36:07.738397"]]
+  ↳ app/controllers/bookmarks_controller.rb:11
+  [1m[36mBookmark Update (1.4ms)[0m  [1m[33mUPDATE "bookmarks" SET "screenshot_url" = $1, "updated_at" = $2 WHERE "bookmarks"."id" = $3[0m  [["screenshot_url", "http://res.cloudinary.com/bidofan/image/upload/v1527107788/rvdmgjerl9uqf1ghjhfk.png"], ["updated_at", "2018-05-23 20:36:28.607221"], ["id", 15]]
+  ↳ app/models/bookmark.rb:18
+  [1m[35m (19.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/bookmarks_controller.rb:11
+Redirected to http://localhost:3000/bookmarks
+Completed 200 OK in 21161ms (ActiveRecord: 52.4ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2018-05-23 23:36:28 +0300
+Processing by BookmarksController#index as HTML
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.4ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.0ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (5.8ms)
+  Rendered bookmarks/_row.html.erb (1.4ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (55.9ms)
+Completed 200 OK in 416ms (Views: 409.6ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:36:32 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.7ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (6.3ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (4.9ms)
+  Rendered bookmarks/index.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 194ms (Views: 183.6ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 23:36:49 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.1ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (5.4ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (13.9ms)
+  Rendered bookmarks/_row.html.erb (1.5ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 149ms (Views: 137.3ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 23:37:51 +0300
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (13.6ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (0.8ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (50.7ms)
+  Rendered bookmarks/_row.html.erb (0.8ms)
+  Rendered bookmarks/_row.html.erb (0.5ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/index.html.erb within layouts/application (87.3ms)
+Completed 200 OK in 704ms (Views: 629.5ms | ActiveRecord: 24.9ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:37:57 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (5.2ms)
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (5.5ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (15.5ms)
+  Rendered bookmarks/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 129ms (Views: 115.9ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 23:37:58 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (3.7ms)
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.0ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (6.2ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (0.8ms)
+  Rendered bookmarks/_row.html.erb (1.5ms)
+  Rendered bookmarks/index.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 173ms (Views: 166.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/bookmarks?page=2" for 127.0.0.1 at 2018-05-23 23:38:04 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.9ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (4.7ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 4]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (4.5ms)
+  Rendered bookmarks/index.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 182ms (Views: 172.8ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/bookmarks?page=1" for 127.0.0.1 at 2018-05-23 23:38:08 +0300
+Processing by BookmarksController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering bookmarks/index.html.erb within layouts/application
+  Rendered bookmarks/_form.html.erb (4.2ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "bookmarks"[0m
+  ↳ app/views/bookmarks/index.html.erb:13
+  [1m[36mBookmark Load (1.1ms)[0m  [1m[34mSELECT  "bookmarks".* FROM "bookmarks" LIMIT $1 OFFSET $2[0m  [["LIMIT", 4], ["OFFSET", 0]]
+  ↳ app/views/bookmarks/index.html.erb:15
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered bookmarks/_row.html.erb (8.5ms)
+  Rendered bookmarks/_row.html.erb (0.6ms)
+  Rendered bookmarks/_row.html.erb (6.2ms)
+  Rendered bookmarks/_row.html.erb (0.7ms)
+  Rendered bookmarks/index.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 170ms (Views: 162.3ms | ActiveRecord: 4.1ms)
+
+

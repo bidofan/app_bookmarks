@@ -1,0 +1,10 @@
+<div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter sprinkle">
+  <div class="col-md-9">
+    <a href="<%= bookmark.url %>"><img src='<%= bookmark.screenshot_url %>' class="img-responsive"/></a>
+  </div>
+  <div class="col-md-3">
+    <% if current_user.id == bookmark.user_id %>
+    <span style="float: right"><%= link_to 'Edit', edit_bookmark_path(bookmark) %> <%= link_to '✕', bookmark_path(bookmark), method: :delete, remote: true, class: 'delete_bookmark' %></span>
+    <% end %>
+  </div>
+</div>
