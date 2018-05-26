@@ -3,7 +3,7 @@
   <a href="<%= bookmark.url %>"><img src='<%= bookmark.screenshot_url %>' class="img"/></a>
   <div class="hidden">
     <% if current_user.id == bookmark.user_id %>
-    <span><%= link_to '🖋', edit_bookmark_path(bookmark) %> <%= link_to '✕', bookmark_path(bookmark), method: :delete, remote: true, class: 'delete_bookmark' %></span>
+    <span><%= link_to '🖋', bookmarks_path %> <%= link_to '✕', bookmark_path(bookmark), method: :delete, remote: true, class: 'delete_bookmark' %></span>
     <% end %>
   </div>
 </div>
