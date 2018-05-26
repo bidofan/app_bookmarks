@@ -1,10 +1,8 @@
-<div class="col-lg-3 col-md-3 col-sm-12 col-12">
-  <div class="col-md-9">
-    <a href="<%= bookmark.url %>"><img src='<%= bookmark.screenshot_url %>' class="img-responsive"/></a>
-  </div>
-  <div class="col-md-3">
+<div class="bookmark">
+  <a href="<%= bookmark.url %>"><img src='<%= bookmark.screenshot_url %>' class="img-responsive"/></a>
+  <div class="hidden">
     <% if current_user.id == bookmark.user_id %>
-    <span><%= link_to 'Edit', edit_bookmark_path(bookmark) %> <%= link_to '✕', bookmark_path(bookmark), method: :delete, remote: true, class: 'delete_bookmark' %></span>
+    <span><%= link_to '✎', edit_bookmark_path(bookmark) %> <%= link_to '✕', bookmark_path(bookmark), method: :delete, remote: true, class: 'delete_bookmark' %></span>
     <% end %>
   </div>
 </div>

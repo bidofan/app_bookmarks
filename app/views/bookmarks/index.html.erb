@@ -1,5 +1,5 @@
-<div class="container">
-<%= form_tag(bookmarks_path, :method => "get", id: "search-form", class: "form-inline search") do %>
+<div class="d-flex justify-content-center">
+<%= form_tag(bookmarks_path, :method => "get", id: "search-form", class: "form-inline search d-flex flex-nowrap") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Write url to find bookmarks", :class => "form-control col-lg-9 col-md-10 col-sm-12" %>
   <%= submit_tag "Search", :class => "btn btn-success" %>
 <% end %>
@@ -16,7 +16,7 @@
   </div>
 </div>
 <br/>
-<div id="bookmark_holder" class="row">
+<div id="bookmark_holder" class="d-flex justify-content-between">
   <% @bookmarks.each do |bookmark| %>
       <%= render 'row', bookmark: bookmark %>
   <% end %>

@@ -1,6 +1,33 @@
 // Place all the styles related to the Bookmarks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bookmark{
+  width: 20%;
+  position: relative;
+}
+.hidden{
+  position:absolute;
+  width: 20%;
+  height: 20%;
+  left:80%;
+  bottom:100%;
+  right:0;
+  top:0;
+  background:rgba(255,255,255, 0.7);
+  padding:5px;
+  display:none;
+  border-radius: 0 0 0 15px;
+}
+.bookmark:hover .hidden{
+  display: block;
+}
 .search{
-    margin: 5px;
+  margin: 4vh;
+}
+.img-responsive{
+  width: 100%;
+}
+
+.pagination {
+  margin: 10px;
 }

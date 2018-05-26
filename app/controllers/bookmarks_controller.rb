@@ -12,14 +12,12 @@ class BookmarksController < ApplicationController
     #@bookmark = Bookmark.new
   end
   def create
-    @bookmark = current_user.bookmarks.create(bookmark_params) 
+    @bookmark = current_user.bookmarks.create(bookmark_params)
     redirect_to bookmarks_path
   end
   def update
     if @bookmark.update(bookmark_params)
       redirect_to bookmarks_path
-    else
-      format.html { render :edit }
     end
   end
 
