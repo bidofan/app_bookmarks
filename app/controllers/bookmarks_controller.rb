@@ -12,26 +12,14 @@ class BookmarksController < ApplicationController
     #@bookmark = Bookmark.new
   end
   def create
-    @bookmark = current_user.bookmarks.create(bookmark_params)
-    respond_to do |format|
-      if @post.save
-        format.html { redirect_to bookmarks_url, notice: 'Bookmark was successfully created.' }
-        format.json { render :index, status: :created, location: bookmarks_url }
-      else
-        format.html { render :new }
-        format.json { render json: @bookmark.errors, status: :unprocessable_entity }
-      end
-    end
+    @bookmark = current_user.bookmarks.create(bookmark_params) 
+    redirect_to bookmarks_path
   end
   def update
-    respond_to do |format|
-      if @bookmark.update(bookmark_params)
-        format.html { redirect_to bookmarks_path, notice: 'Bookmark was successfully updated.' }
-        format.json { render :index, status: :ok, location: bookmarks_path}
-      else
-        format.html { render :edit }
-        format.json { render json: @bookmark.errors, status: :unprocessable_entity }
-      end
+    if @bookmark.update(bookmark_params)
+      redirect_to bookmarks_path
+    else
+      format.html { render :edit }
     end
   end
 
@@ -40,8 +28,7 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark.destroy
     respond_to do |format|
-      format.html { redirect_to bookmarks_url, notice: 'Bookmark was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to bookmarks_path}
     end
   end
   private

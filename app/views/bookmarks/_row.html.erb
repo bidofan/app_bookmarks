@@ -4,7 +4,7 @@
   </div>
   <div class="col-md-3">
     <% if current_user.id == bookmark.user_id %>
-    <span style="float: right"><%= link_to 'Edit', edit_bookmark_path(bookmark) %> <%= link_to '✕', bookmark_path(bookmark), method: :delete, remote: true, class: 'delete_bookmark' %></span>
+    <span><%= link_to 'Edit', edit_bookmark_path(bookmark) %> <%= link_to '✕', bookmark_path(bookmark), method: :delete, remote: true, class: 'delete_bookmark' %></span>
     <% end %>
   </div>
 </div>
