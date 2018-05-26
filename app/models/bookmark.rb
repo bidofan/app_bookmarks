@@ -1,20 +1,20 @@
 require 'uri'
 class Bookmark < ApplicationRecord
-    after_create :screenshot
+    after_create :screenshot, :set_title
     validates :url, :format => URI::regexp(%w(http https)), presence: true
 
     belongs_to :user
 
     private
     def self.search(search)
-        where('url LIKE ?', "%#{search}%")
+        where('title LIKE ?', "%#{search}%")
     end
     def url_title
         URI.parse(url).host.sub(/\Awww\./, '')
     end
 
-    def set_screen_url
-
+    def set_title
+      update(title: URI.parse(url).host)
     end
     def screenshot
       ws = Webshot::Screenshot.instance

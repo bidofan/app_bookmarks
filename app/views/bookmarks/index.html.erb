@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center">
 <%= form_tag(bookmarks_path, :method => "get", id: "search-form", class: "form-inline search d-flex flex-nowrap") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Write url to find bookmarks", :class => "form-control col-lg-9 col-md-10 col-sm-12" %>
-  <%= submit_tag "Search", :class => "btn btn-success" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search", :class => "form-control col-lg-9 col-md-10 col-sm-12" %>
+  <%= submit_tag "🔍", :class => "btn btn-success" %>
 <% end %>
 </div>
 
@@ -21,4 +21,4 @@
       <%= render 'row', bookmark: bookmark %>
   <% end %>
 </div>
-<center><%= will_paginate(@bookmarks,  :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %></center>
+<div class="d-flex justify-content-center"><%= will_paginate(@bookmarks,  :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %></div>
