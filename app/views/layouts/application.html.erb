@@ -11,30 +11,28 @@
   </head>
 
   <body>
-      <script>
+      <script type="text/javascript">
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : <%= ENV['1027365290748195'] %>, // App ID
+          status     : true, // check login status
+          cookie     : true, // enable cookies to allow the server to access the session
+          xfbml      : true  // parse XFBML
+        });
+      };
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
       function checkLoginState() {
         FB.getLoginStatus(function(response) {
           statusChangeCallback(response);
         });
       }
-        window.fbAsyncInit = function() {
-          FB.init({
-            appId      : '1027365290748195',
-            cookie      : true,
-            xfbml      : true,
-            version    : 'v3.0'
-          });
-          FB.AppEvents.logPageView();
-        };
-
-        (function(d, s, id){
-           var js, fjs = d.getElementsByTagName(s)[0];
-           if (d.getElementById(id)) {return;}
-           js = d.createElement(s); js.id = id;
-           js.src = "https://connect.facebook.net/en_US/sdk.js";
-           fjs.parentNode.insertBefore(js, fjs);
-         }(document, 'script', 'facebook-jssdk'));
-      </script>
+   </script>
         <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
             <div class="container">
                 <div class="navbar-header">
