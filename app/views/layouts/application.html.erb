@@ -20,6 +20,22 @@
           xfbml      : true  // parse XFBML
         });
       };
+      $(document).bind("fb.loaded", function() {
+        FB.getLoginStatus(function(response) {
+
+          console.log('FB STATUS: ' + response.status);
+          if(response.status == "connected") {
+
+            console.log("FB AUTHED");
+
+            location.href =
+              '/auth/facebook/callback?' +
+              $.param({ signed_request: response.authResponse.signedRequest })
+            });
+
+          }
+        });
+      });
       (function(d, s, id){
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {return;}
