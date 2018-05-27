@@ -3,12 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .bookmark{
   width: 20%;
+  margin: 10px;
   position: relative;
+}
+.bookmark h5{
+  text-align: center;
 }
 .hidden{
   position:absolute;
-  width: 30%;
-  height: 25%;
+  width: 22%;
+  height: 18%;
   left:80%;
   bottom:100%;
   right:0;
@@ -27,10 +31,16 @@
 .img{
   width: 100%;
 }
-
 .pagination {
   margin: 10px;
 }
-.bookmark h5{
-  text-align: center;
+
+
+@media (max-width: 600px) {
+  .bookmark{
+    width: 80%;
+  }
+  #bookmark_holder{
+    flex-wrap: wrap;
+  }
 }

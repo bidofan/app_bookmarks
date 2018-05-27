@@ -12,7 +12,7 @@
 
   <div class="form-group">
     <%= f.label :url, :for => 'url' %><br />
-    <%= f.text_field :url , :class => 'form-control', :id => 'url' %>
+    <%= f.text_field :url , :placeholder => 'Should start with http or https', :class => 'form-control', :id => 'url' %>
   </div>
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn' %>

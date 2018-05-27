@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center">
 <%= form_tag(bookmarks_path, :method => "get", id: "search-form", class: "form-inline search d-flex flex-nowrap") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search", :class => "form-control col-lg-9 col-md-10 col-sm-12" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search", :class => "form-control" %>
   <%= submit_tag "🔍", :class => "btn btn-success" %>
 <% end %>
 </div>
@@ -11,12 +11,12 @@
   Create bookmark
 </button><br/>
 <div class="collapse" id="collapseExample">
-  <div class="well">
+  <div class="">
     <%= render 'form' %>
   </div>
 </div>
 <br/>
-<div id="bookmark_holder" class="d-flex justify-content-between">
+<div id="bookmark_holder" class="d-flex justify-content-center">
   <% @bookmarks.each do |bookmark| %>
       <%= render 'row', bookmark: bookmark %>
   <% end %>
